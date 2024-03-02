@@ -6,19 +6,19 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 public class AnnotatiionTest {
-//	@MyAnno
+	@MyAnno("hi")
 	String name;
 	
-	@MyAnno(value = "String",age = 23)
-	void show() {}
+	@MyAnno({"sss","kk","ll"})
+	void show() {};
 	
 	
 }
 
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target({ElementType.METHOD,ElementType.FIELD})
 @interface MyAnno{
-	String value();
-	int age();
+	String[] value();
+	
 }
